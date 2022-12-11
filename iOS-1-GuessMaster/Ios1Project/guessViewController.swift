@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
 
 class guessViewController: UIViewController {
-
+    
     @IBOutlet weak var displayWordLabel: UILabel!
     @IBOutlet weak var wrongLetters: UILabel!
     @IBOutlet weak var guessTextField: UITextField!
@@ -17,11 +20,16 @@ class guessViewController: UIViewController {
     //hangman picture
     @IBOutlet weak var hangmanImage: UIImageView!
     
+    let db = Firestore.firestore()
+    
+    var ref = Database.database().reference()
+    //var currentRef: DatabaseReference!
+    
     //These are the words people will try to guess
     var wordArray = ["ORANGE", "APPLE"]
     
     //This is the chossen word from the wordArray
-     var word = ""
+    var word = ""
     
     //This is where I store the incorrect guesses
     var wrongLettersArray = [Character]()
@@ -60,7 +68,7 @@ class guessViewController: UIViewController {
         }
         
     }
-
+    
     @IBAction func guessButton(_ sender: UIButton) {
         //Resign first responder textField
         guessTextField.resignFirstResponder()
@@ -80,9 +88,7 @@ class guessViewController: UIViewController {
             displayWordLabel.text = displayWord
             guessTextField.text = ""
             checkForWin()
-            
         }
-        
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
@@ -94,7 +100,7 @@ class guessViewController: UIViewController {
         wrongLettersArray = []
         wrongLetters.text = ""
         displayWord = ""
-
+        
         //Pick a new random word and display it in the label
         word = wordArray.randomElement()!
         usedLetters = Array(word)
@@ -122,7 +128,7 @@ class guessViewController: UIViewController {
             wrongLetters.text = String(wrongLettersArray)
         }
     }
-
+    
     func placeImage(){
         //
         let p0 = UIImage(named: "pic0")
@@ -135,7 +141,6 @@ class guessViewController: UIViewController {
         let p7 = UIImage(named: "pic7")
         let p8 = UIImage(named: "pic8")
         let p9 = UIImage(named: "pic9")
-
         
         let imageArray = [p0,p1,p2,p3,p4,p5,p6,p7,p8,p9]
         if wrongLettersArray == [] {
@@ -147,17 +152,44 @@ class guessViewController: UIViewController {
     }
     
     func checkForWin(){
-
-        if wrongLettersArray.count == 9 {
-
+        if wrongLettersArray.count == 10 {
             gameImage.image = UIImage(named: "gameOver")
-
         } else if displayWord.contains("?") {
-
             placeImage()
         }else {
             gameImage.image = UIImage(named: "youWin")
+            increasePoints()
         }
     }
     
+    // method for updating the points
+    func increasePoints() {
+        
+        // getting logged in user data
+        let user = Auth.auth().currentUser
+        var email: String?
+        if let currentUser = user {
+            email = currentUser.value(forKey: "email") as? String
+        }
+        
+        // updating points when guess is correct
+        let documents = db.collection("Users").whereField("email", isEqualTo: email!)
+        documents.getDocuments { querySnapshot, error in
+            if let err = error {
+                print("There is an error --- \(err)")
+            } else{
+                if let users = querySnapshot?.documents {
+                    for user in users {
+                        print("------->\(user.documentID)")
+                        let points = user["points"] as? Int
+                        if var oldPoint = points {
+                            oldPoint = oldPoint + 5
+                            print(oldPoint)
+                            self.db.collection("Users").document(user.documentID).setData(["points" : oldPoint], merge: true)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

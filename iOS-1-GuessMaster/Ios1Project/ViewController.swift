@@ -38,18 +38,18 @@ class ViewController: UIViewController {
         passwordEdit.layer.cornerRadius = 15.0
     }
     
+    // login button click action
     @IBAction func loginCLicked(_ sender: UIButton) {
-        
+        // collectiong user entered credentials
         if let email = userEdit.text, let password = passwordEdit.text {
-            
+            // logging user in with given creadentials
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                
                 if let e = error {
                     print(e)
                 } else {
+                    // taking the authenticated user to another screen
                     self.performSegue(withIdentifier: "LoginToHome", sender: self)
                 }
-                
             }
         }
     }

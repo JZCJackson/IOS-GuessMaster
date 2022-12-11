@@ -72,7 +72,6 @@ class ViewController2: UIViewController {
         if let name = nameEdit.text, let email = emailEdit.text, let phone = phoneEdit.text, let password = passwordEdit.text, let confPassword = confirmEdit.text {
             
             if password == confPassword {
-                
                 // creating a new user
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let e = error {
@@ -91,17 +90,14 @@ class ViewController2: UIViewController {
                     "points": points
                 ]) { (error) in
                     if let e = error {
-                        print(e)
+                        print("Error \(e)")
                     } else {
                         print("Data saved successfully.")
                     }
                 }
-                
             } else {
                 print("Password Mismatch")
             }
-            
         }
-        
     }
 }

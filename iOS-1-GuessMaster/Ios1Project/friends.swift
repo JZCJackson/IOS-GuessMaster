@@ -7,26 +7,24 @@
 
 import UIKit
 
-class friends: UIViewController {
+class friends: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet var friendLabel: UILabel!
-
-
+    @IBOutlet weak var friendsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         friendLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 44.0)
+        friendsTableView.dataSource = self
+        friendsTableView.register(UINib(nibName: "FriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
+    }
 
-        // Do any additional setup after loading the view.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = friendsTableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendsTableViewCell
+        return cell
     }
-    */
-
 }

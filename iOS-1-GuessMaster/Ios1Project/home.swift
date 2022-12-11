@@ -6,46 +6,66 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseFirestore
 
 class home: UIViewController {
+    
     @IBOutlet var homeLabel: UILabel!
+    @IBOutlet weak var charNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var pointsLabel: UILabel!
     
     let db = Firestore.firestore()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 44.0)
-        // Do any additional setup after loading the view.
         
         loadUserData()
+        listAllUser()
     }
     
     func loadUserData() {
         
-        db.collection("Users").getDocuments { querySnapShot, error in
-            if let e = error {
-                print("Error in fetching data ---> \(e)")
-            } else {
-                if let snapShotDocument = querySnapShot?.documents {
-                    for doc in snapShotDocument {
-                        let data = doc.data()
-                        print(data)
+        // getting logged in user data
+        let user = Auth.auth().currentUser
+        var email: String?
+        if let currentUser = user {
+            email = currentUser.value(forKey: "email") as? String
+        }
+        
+        let documents = db.collection("Users").whereField("email", isEqualTo: email!)
+        documents.addSnapshotListener { querySnapshot, error in
+            if let err = error {
+                print("There is an error --- \(err)")
+            } else{
+                if let users = querySnapshot?.documents {
+                    for user in users {
+                        self.charNameLabel.text = user["charName"] as? String
+                        self.nameLabel.text = user["name"] as? String
+                        self.emailLabel.text = user["email"] as? String
+                        self.phoneLabel.text = user["phone"] as? String
+                        self.pointsLabel.text = String((user["points"] as? Int)!)
                     }
                 }
             }
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func listAllUser() {
+        let userRef = db.collection("Users")
+        userRef.order(by: "points", descending: true).addSnapshotListener { quesrySnapshot, error in
+            if error == nil {
+                if let documents = quesrySnapshot?.documents {
+                    for document in documents {
+                        print(document["points"]!)
+                    }
+                }
+            }
+        }
     }
-    */
-
 }

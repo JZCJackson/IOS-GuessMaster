@@ -12,7 +12,6 @@ class guess: UIViewController {
     @IBOutlet var guessLabel: UILabel!
     @IBOutlet var guessEdit: UITextField!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         guessLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 44.0)
@@ -24,18 +23,5 @@ class guess: UIViewController {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
         guessEdit.layer.cornerRadius = 15.0
-
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
