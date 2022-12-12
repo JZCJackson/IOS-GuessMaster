@@ -1004,7 +1004,7 @@
                                 <rect key="frame" x="85" y="616" width="43" height="30"/>
                                 <state key="normal" title="Guess"/>
                                 <connections>
-                                    <action selector="guessButton:" destination="q3Y-qE-Drq" eventType="touchUpInside" id="jaz-zV-YiW"/>
+                                    <action selector="guessAction:" destination="q3Y-qE-Drq" eventType="touchUpInside" id="eEU-eh-DwE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1l5-3w-ZSQ">
@@ -1036,7 +1036,7 @@
                                 <rect key="frame" x="268" y="616" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="resetButton:" destination="q3Y-qE-Drq" eventType="touchUpInside" id="yEW-ax-odV"/>
+                                    <action selector="resetAction:" destination="q3Y-qE-Drq" eventType="touchUpInside" id="GGJ-KG-q6d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1068,11 +1068,11 @@
                     <tabBarItem key="tabBarItem" title="Game" image="gamecontroller" catalog="system" landscapeImage="wonsign.circle" selectedImage="gamecontroller" id="yQO-s9-ALE"/>
                     <navigationItem key="navigationItem" id="Hso-fz-XS2"/>
                     <connections>
-                        <outlet property="displayWordLabel" destination="ol5-1s-E7D" id="o5t-gX-EoE"/>
-                        <outlet property="gameImage" destination="RuC-dO-SPH" id="7pY-fE-Mih"/>
-                        <outlet property="guessTextField" destination="1l5-3w-ZSQ" id="zrX-hs-t1F"/>
+                        <outlet property="guessLetter" destination="1l5-3w-ZSQ" id="2Pn-Cd-F0u"/>
                         <outlet property="hangmanImage" destination="fSV-dV-FaL" id="cRW-Dh-nr9"/>
-                        <outlet property="wrongLetters" destination="lJV-9V-UE8" id="PvU-5N-18U"/>
+                        <outlet property="result" destination="RuC-dO-SPH" id="u7C-7C-HSk"/>
+                        <outlet property="showWordLabel" destination="ol5-1s-E7D" id="3dT-Pb-B5h"/>
+                        <outlet property="wrongGuess" destination="lJV-9V-UE8" id="ttA-TP-aFP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ix-oc-uyC" sceneMemberID="firstResponder"/>

@@ -12,11 +12,11 @@ import FirebaseDatabase
 
 class guessViewController: UIViewController {
     
-    @IBOutlet weak var displayWordLabel: UILabel!
-    @IBOutlet weak var wrongLetters: UILabel!
-    @IBOutlet weak var guessTextField: UITextField!
+    @IBOutlet weak var showWordLabel: UILabel!
+    @IBOutlet weak var wrongGuess: UILabel!
+    @IBOutlet weak var guessLetter: UITextField!
     //win or lose
-    @IBOutlet weak var gameImage: UIImageView!
+    @IBOutlet weak var result: UIImageView!
     //hangman picture
     @IBOutlet weak var hangmanImage: UIImageView!
     
@@ -26,143 +26,141 @@ class guessViewController: UIViewController {
     //var currentRef: DatabaseReference!
     
     //These are the words people will try to guess
-    var wordArray = ["ORANGE", "APPLE"]
+    var database = ["ORANGE", "APPLE"]
     
-    //This is the chossen word from the wordArray
+    //This is the chossen word from the database
     var word = ""
     
     //This is where I store the incorrect guesses
-    var wrongLettersArray = [Character]()
+    var wrongGuessArray = [Character]()
     
     //This is where I store the letters used in the word
     var usedLetters = [Character]()
     
     //This is where I display letters and question marks of the word trying to be guessed
-    var displayWordArray = [Character]()
+    var showdatabase = [Character]()
     
     //This is the string I display for the user to guess
-    var displayWord = ""
+    var showWord = ""
     
     //This is the character that the user guesses
     var guess: Character!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guessTextField.layer.borderColor = UIColor.init(red: 187.0/255.0, green: 134/255.0, blue: 252/255.0, alpha:1.0).cgColor
-        guessTextField.layer.borderWidth = 3.0
-        guessTextField.attributedPlaceholder = NSAttributedString(
+        guessLetter.layer.borderColor = UIColor.init(red: 187.0/255.0, green: 134/255.0, blue: 252/255.0, alpha:1.0).cgColor
+        guessLetter.layer.borderWidth = 3.0
+        guessLetter.attributedPlaceholder = NSAttributedString(
             string: "Guess Words",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-        guessTextField.layer.cornerRadius = 15.0
+        guessLetter.layer.cornerRadius = 15.0
         //choose the word and assign to variable word
-        word = wordArray .randomElement()!
+        word = database .randomElement()!
         
         usedLetters = Array(word)
         
-        //set displayWord to the right number of question marks and put into diaplay word label
+        // MARK: set right number of question marks to showWord
         for letters in 1...word.count {
-            displayWord += "?"
-            displayWordLabel.text = displayWord
-            displayWordArray = Array(displayWord)
+            showWord += "?"
+            showWordLabel.text = showWord
+            showdatabase = Array(showWord)
         }
         
     }
     
-    @IBAction func guessButton(_ sender: UIButton) {
+    @IBAction func guessAction(_ sender: UIButton) {
         //Resign first responder textField
-        guessTextField.resignFirstResponder()
+        guessLetter.resignFirstResponder()
         
         //Make sure the user has entered a letter but only one letter
-        let guess1 = guessTextField.text
+        let guess1 = guessLetter.text
         if guess1 == ""{
-            guessTextField.placeholder = "Can not be empty"
+            guessLetter.placeholder = "Can not be empty"
         }else if guess1!.count > 1{
-            guessTextField.placeholder = "Please enter one letter"
+            guessLetter.placeholder = "Please enter one letter"
         }else{
             //make every input be capital
-            guess = Character(guessTextField.text!.capitalized)
-            //Call the check for letter function
-            checkForLetter()
-            displayWord = String(displayWordArray)
-            displayWordLabel.text = displayWord
-            guessTextField.text = ""
-            checkForWin()
+            guess = Character(guessLetter.text!.capitalized)
+            // MARK: Call the check for letter function
+            if usedLetters.contains(guess) {
+                //correct guess then display that letter
+                for i in 0...word.count - 1 {
+                    if guess == usedLetters[i] {
+                        showdatabase[i] = guess
+                    }
+                }
+                
+            }else {
+                //draw hangman
+                wrongGuessArray.append(guess)
+                wrongGuess.text = String(wrongGuessArray)
+            }
+            showWord = String(showdatabase)
+            showWordLabel.text = showWord
+            guessLetter.text = ""
+            // MARK: check user win or not
+            if wrongGuessArray.count == 10 {
+                result.image = UIImage(named: "gameOver")
+            } else if showWord.contains("?") {
+                showImage()
+            }else {
+                result.image = UIImage(named: "youWin")
+                increasePoints()
+            }
         }
     }
     
-    @IBAction func resetButton(_ sender: UIButton) {
-        //Reset the variables, the labels, the images
-        guessTextField.text = ""
+    
+    @IBAction func resetAction(_ sender: UIButton) {
+        // MARK: Reset variables, labels and images
+        guessLetter.text = ""
         //image blank at start
         hangmanImage.image = UIImage(contentsOfFile: "")
-        gameImage.image = UIImage(contentsOfFile: "")
-        wrongLettersArray = []
-        wrongLetters.text = ""
-        displayWord = ""
+        result.image = UIImage(contentsOfFile: "")
+        wrongGuessArray = []
+        wrongGuess.text = ""
+        showWord = ""
         
-        //Pick a new random word and display it in the label
-        word = wordArray.randomElement()!
+        //Pick a new random word
+        word = database.randomElement()!
         usedLetters = Array(word)
         
         for letters in 1...word.count{
-            displayWord += "?"
-            displayWordLabel.text = displayWord
-            displayWordArray = Array(displayWord)
+            showWord += "?"
+            showWordLabel.text = showWord
+            showdatabase = Array(showWord)
         }
         
     }
     
-    func checkForLetter(){
-        if usedLetters.contains(guess) {
-            //correct guess then display that letter
-            for i in 0...word.count - 1 {
-                if guess == usedLetters[i] {
-                    displayWordArray[i] = guess
-                }
-            }
-            
-        }else {
-            //draw hangman
-            wrongLettersArray.append(guess)
-            wrongLetters.text = String(wrongLettersArray)
-        }
-    }
     
-    func placeImage(){
-        //
-        let p0 = UIImage(named: "pic0")
-        let p1 = UIImage(named: "pic1")
-        let p2 = UIImage(named: "pic2")
-        let p3 = UIImage(named: "pic3")
-        let p4 = UIImage(named: "pic4")
-        let p5 = UIImage(named: "pic5")
-        let p6 = UIImage(named: "pic6")
-        let p7 = UIImage(named: "pic7")
-        let p8 = UIImage(named: "pic8")
-        let p9 = UIImage(named: "pic9")
+    
+    func showImage(){
+        // MARK: show the different inamges when the user guess wrong
+        let image0 = UIImage(named: "pic0")
+        let image1 = UIImage(named: "pic1")
+        let image2 = UIImage(named: "pic2")
+        let image3 = UIImage(named: "pic3")
+        let image4 = UIImage(named: "pic4")
+        let image5 = UIImage(named: "pic5")
+        let image6 = UIImage(named: "pic6")
+        let image7 = UIImage(named: "pic7")
+        let image8 = UIImage(named: "pic8")
+        let image9 = UIImage(named: "pic9")
         
-        let imageArray = [p0,p1,p2,p3,p4,p5,p6,p7,p8,p9]
-        if wrongLettersArray == [] {
-            hangmanImage.image = imageArray[0]
+        let images = [image0,image1,image2,image3,image4,image5,image6,image7,image8,image9]
+        if wrongGuessArray == [] {
+            hangmanImage.image = images[0]
         }else{
-            hangmanImage.image = imageArray[wrongLettersArray.count]
+            hangmanImage.image = images[wrongGuessArray.count]
         }
         
     }
     
-    func checkForWin(){
-        if wrongLettersArray.count == 10 {
-            gameImage.image = UIImage(named: "gameOver")
-        } else if displayWord.contains("?") {
-            placeImage()
-        }else {
-            gameImage.image = UIImage(named: "youWin")
-            increasePoints()
-        }
-    }
     
-    // method for updating the points
+    
+    // MARK:  method for updating the points
     func increasePoints() {
         
         // getting logged in user data
