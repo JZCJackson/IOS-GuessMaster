@@ -28,6 +28,10 @@
 		C26A32662928232E00C77523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26A32642928232E00C77523 /* LaunchScreen.storyboard */; };
 		C26A326E29282F6E00C77523 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26A326D29282F6E00C77523 /* ViewController2.swift */; };
 		C2B3A38829303D1100931A14 /* CoinExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3A38729303D1100931A14 /* CoinExchange.swift */; };
+		C2E7504B2946F51000784555 /* ExchageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7504A2946F51000784555 /* ExchageListController.swift */; };
+		C2E7504D2946F76300784555 /* ExchangeOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7504C2946F76300784555 /* ExchangeOneController.swift */; };
+		C2E7504F2946F77400784555 /* ExchangeTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7504E2946F77400784555 /* ExchangeTwoController.swift */; };
+		C2E750512946F78600784555 /* ExchangeThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E750502946F78600784555 /* ExchangeThreeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		C26A32672928232E00C77523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C26A326D29282F6E00C77523 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		C2B3A38729303D1100931A14 /* CoinExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchange.swift; sourceTree = "<group>"; };
+		C2E7504A2946F51000784555 /* ExchageListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchageListController.swift; sourceTree = "<group>"; };
+		C2E7504C2946F76300784555 /* ExchangeOneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeOneController.swift; sourceTree = "<group>"; };
+		C2E7504E2946F77400784555 /* ExchangeTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTwoController.swift; sourceTree = "<group>"; };
+		C2E750502946F78600784555 /* ExchangeThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeThreeController.swift; sourceTree = "<group>"; };
 		C9856005E1DCA5933F8D6E74 /* Pods_Ios1Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ios1Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2F3F4CD7D8FEB2CB74355B /* Pods-Ios1Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ios1Project.debug.xcconfig"; path = "Target Support Files/Pods-Ios1Project/Pods-Ios1Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +130,10 @@
 				C20BFD47292AE2C8001D39A3 /* level.swift */,
 				C2B3A38729303D1100931A14 /* CoinExchange.swift */,
 				C23DEAAE293EE674009EC87B /* guessViewController.swift */,
+				C2E7504A2946F51000784555 /* ExchageListController.swift */,
+				C2E7504C2946F76300784555 /* ExchangeOneController.swift */,
+				C2E7504E2946F77400784555 /* ExchangeTwoController.swift */,
+				C2E750502946F78600784555 /* ExchangeThreeController.swift */,
 				C26A325F2928232D00C77523 /* Main.storyboard */,
 				C26A32622928232D00C77523 /* Assets.xcassets */,
 				C26A32642928232E00C77523 /* LaunchScreen.storyboard */,
@@ -258,13 +270,17 @@
 				C20BFD42292AE29D001D39A3 /* home.swift in Sources */,
 				C26A325A2928232D00C77523 /* AppDelegate.swift in Sources */,
 				C23DEAAF293EE674009EC87B /* guessViewController.swift in Sources */,
+				C2E7504F2946F77400784555 /* ExchangeTwoController.swift in Sources */,
 				C20BFD46292AE2BB001D39A3 /* database.swift in Sources */,
+				C2E7504B2946F51000784555 /* ExchageListController.swift in Sources */,
 				C26A325C2928232D00C77523 /* SceneDelegate.swift in Sources */,
 				C20BFD3E292AC98D001D39A3 /* guess.swift in Sources */,
 				05A22D6D293AB0C4001D2BE2 /* FriendsTableViewCell.swift in Sources */,
 				C20BFD48292AE2C8001D39A3 /* level.swift in Sources */,
 				05AD1A4729466BE000E7E3B1 /* RankTableCell.swift in Sources */,
 				C20BFD40292AD8A7001D39A3 /* friends.swift in Sources */,
+				C2E7504D2946F76300784555 /* ExchangeOneController.swift in Sources */,
+				C2E750512946F78600784555 /* ExchangeThreeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

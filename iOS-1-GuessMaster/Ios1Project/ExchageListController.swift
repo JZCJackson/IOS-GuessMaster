@@ -1,18 +1,16 @@
 //
-//  database.swift
+//  ExchageListController.swift
 //  Ios1Project
 //
-//  Created by CHEN on 2022-11-20.
+//  Created by CHEN on 2022-12-12.
 //
 
 import UIKit
 
-class database: UIViewController {
-    @IBOutlet var dataLabel: UILabel!
+class ExchageListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 44.0)
 
         // Do any additional setup after loading the view.
     }
