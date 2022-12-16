@@ -71,7 +71,7 @@ class ViewController2: UIViewController {
         
         if let name = nameEdit.text, let email = emailEdit.text, let phone = phoneEdit.text, let password = passwordEdit.text, let confPassword = confirmEdit.text {
             
-            if password == confPassword {
+            if password.count > 6 && password == confPassword {
                 // creating a new user
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let e = error {
@@ -79,24 +79,27 @@ class ViewController2: UIViewController {
                     } else {
                         self.performSegue(withIdentifier: "RegToLogin", sender: self)
                     }
-                }
-                
-                // creating a users collection and saving user's data
-                db.collection("Users").addDocument(data: [
-                    "charName": charName,
-                    "name": name,
-                    "email": email,
-                    "phone": phone,
-                    "points": points
-                ]) { (error) in
-                    if let e = error {
-                        print("Error \(e)")
-                    } else {
-                        print("Data saved successfully.")
+                    
+                    
+                    // creating a users collection and saving user's data
+                    self.db.collection("Users").addDocument(data: [
+                        "charName": self.charName,
+                        "name": name,
+                        "email": email,
+                        "phone": phone,
+                        "points": self.points
+                    ]) { (error) in
+                        if let e = error {
+                            print("Error \(e)")
+                        } else {
+                            print("Data saved successfully.")
+                        }
                     }
                 }
             } else {
-                print("Password Mismatch")
+                let buttonAlert = UIAlertController(title: "Password Error :(", message: "Either your passwords are not matching or lenght of your password is less than 6 characters." , preferredStyle: .alert)
+                buttonAlert.addAction(UIAlertAction(title: "Re-enter Password", style: .default))
+                self.present(buttonAlert, animated: true)
             }
         }
     }
