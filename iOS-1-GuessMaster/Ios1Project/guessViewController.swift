@@ -61,7 +61,7 @@ class guessViewController: UIViewController {
         usedLetters = Array(word)
         
         // MARK: set right number of question marks to showWord
-        for letters in 1...word.count {
+        for _ in 1...word.count {
             showWord += "?"
             showWordLabel.text = showWord
             showdatabase = Array(showWord)
@@ -126,7 +126,7 @@ class guessViewController: UIViewController {
         word = database.randomElement()!
         usedLetters = Array(word)
         
-        for letters in 1...word.count{
+        for _ in 1...word.count{
             showWord += "?"
             showWordLabel.text = showWord
             showdatabase = Array(showWord)
@@ -157,8 +157,6 @@ class guessViewController: UIViewController {
         }
         
     }
-    
-    
     
     // MARK:  method for updating the points
     func increasePoints() {

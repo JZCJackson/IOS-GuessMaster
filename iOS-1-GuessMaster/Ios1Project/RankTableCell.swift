@@ -18,29 +18,11 @@ class RankTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        listAllUser()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    
-    func listAllUser() {
-        let userRef = db.collection("Users")
-        userRef.order(by: "points", descending: true).addSnapshotListener { quesrySnapshot, error in
-            if error == nil {
-                if let documents = quesrySnapshot?.documents {
-                    for document in documents {
-                        self.nameLabel.text = document["name"] as? String
-                        self.pointsLabel.text = String((document["points"] as? Int)!)
-                        print(document["points"]!)
-                    }
-                }
-            }
-        }
-    }
-    
+
 }

@@ -25,7 +25,7 @@ class home: UIViewController {
         homeLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 44.0)
         
         loadUserData()
-        listAllUser()
+        //listAllUser()
     }
     
     func loadUserData() {
@@ -56,16 +56,14 @@ class home: UIViewController {
         
     }
     
-    func listAllUser() {
-        let userRef = db.collection("Users")
-        userRef.order(by: "points", descending: true).addSnapshotListener { quesrySnapshot, error in
-            if error == nil {
-                if let documents = quesrySnapshot?.documents {
-                    for document in documents {
-                        print(document["points"]!)
-                    }
-                }
-            }
+    @IBAction func logoutClicked(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
         }
     }
+    
 }

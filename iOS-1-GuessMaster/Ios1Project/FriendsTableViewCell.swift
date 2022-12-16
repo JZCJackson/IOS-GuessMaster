@@ -1,17 +1,16 @@
 //
-//  TableViewCell.swift
+//  FriendsTableViewCell.swift
 //  Ios1Project
 //
-//  Created by Fenil Bhanavadiya on 2022-12-02.
+//  Created by Fenil Bhanavadiya on 2022-12-15.
 //
 
 import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var charNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +19,8 @@ class FriendsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
+        // Configure the view for the selected state
     }
     
 }
