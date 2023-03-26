@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C265342129C636640041A129 /* GuessMaster2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342029C636640041A129 /* GuessMaster2023App.swift */; };
+		C265342329C636640041A129 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342229C636640041A129 /* ContentView.swift */; };
+		C265342529C636650041A129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C265342429C636650041A129 /* Assets.xcassets */; };
+		C265342829C636650041A129 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C265342729C636650041A129 /* Preview Assets.xcassets */; };
+		C265342F29C6373E0041A129 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342E29C6373E0041A129 /* LoginView.swift */; };
+		C265343129C637460041A129 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343029C637460041A129 /* RegisterView.swift */; };
+		C265343329C6374E0041A129 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343229C6374E0041A129 /* HomeView.swift */; };
+		C265343529C637540041A129 /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343429C637540041A129 /* GuessView.swift */; };
+		C265343729C6375C0041A129 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343629C6375C0041A129 /* MainAppView.swift */; };
+		C2C9FA2429CBA86900F97C49 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2329CBA86900F97C49 /* RankView.swift */; };
+		C2C9FA2829CBAAD100F97C49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2729CBAAD100F97C49 /* User.swift */; };
+		C2C9FA2A29CC30FF00F97C49 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2929CC30FF00F97C49 /* GridView.swift */; };
+		C2E5368429D0BE6E00BAB4F3 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368329D0BE6E00BAB4F3 /* FriendsList.swift */; };
+		C2E5368629D0BE7500BAB4F3 /* CoinExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368529D0BE7500BAB4F3 /* CoinExchange.swift */; };
+		C2E5368829D0BE8900BAB4F3 /* BombaySpices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */; };
+		C2E5368A29D0BE8F00BAB4F3 /* DiscountCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368929D0BE8F00BAB4F3 /* DiscountCode.swift */; };
+		C2E5368C29D0C05D00BAB4F3 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368B29D0C05D00BAB4F3 /* LaunchScreen.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C265341D29C636640041A129 /* GuessMaster2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessMaster2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C265342029C636640041A129 /* GuessMaster2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessMaster2023App.swift; sourceTree = "<group>"; };
+		C265342229C636640041A129 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C265342429C636650041A129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C265342729C636650041A129 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C265342E29C6373E0041A129 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C265343029C637460041A129 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C265343229C6374E0041A129 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C265343429C637540041A129 /* GuessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
+		C265343629C6375C0041A129 /* MainAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		C2C9FA2329CBA86900F97C49 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
+		C2C9FA2729CBAAD100F97C49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2C9FA2929CC30FF00F97C49 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		C2E5368329D0BE6E00BAB4F3 /* FriendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		C2E5368529D0BE7500BAB4F3 /* CoinExchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinExchange.swift; sourceTree = "<group>"; };
+		C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BombaySpices.swift; sourceTree = "<group>"; };
+		C2E5368929D0BE8F00BAB4F3 /* DiscountCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscountCode.swift; sourceTree = "<group>"; };
+		C2E5368B29D0C05D00BAB4F3 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C265341A29C636640041A129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C265341429C636640041A129 = {
+			isa = PBXGroup;
+			children = (
+				C265341F29C636640041A129 /* GuessMaster2023 */,
+				C265341E29C636640041A129 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C265341E29C636640041A129 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C265341D29C636640041A129 /* GuessMaster2023.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C265341F29C636640041A129 /* GuessMaster2023 */ = {
+			isa = PBXGroup;
+			children = (
+				C265342029C636640041A129 /* GuessMaster2023App.swift */,
+				C2E5368B29D0C05D00BAB4F3 /* LaunchScreen.swift */,
+				C265342E29C6373E0041A129 /* LoginView.swift */,
+				C265343029C637460041A129 /* RegisterView.swift */,
+				C265342229C636640041A129 /* ContentView.swift */,
+				C265343629C6375C0041A129 /* MainAppView.swift */,
+				C265343229C6374E0041A129 /* HomeView.swift */,
+				C265343429C637540041A129 /* GuessView.swift */,
+				C2C9FA2329CBA86900F97C49 /* RankView.swift */,
+				C2C9FA2929CC30FF00F97C49 /* GridView.swift */,
+				C2C9FA2729CBAAD100F97C49 /* User.swift */,
+				C2E5368329D0BE6E00BAB4F3 /* FriendsList.swift */,
+				C2E5368529D0BE7500BAB4F3 /* CoinExchange.swift */,
+				C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */,
+				C2E5368929D0BE8F00BAB4F3 /* DiscountCode.swift */,
+				C265342429C636650041A129 /* Assets.xcassets */,
+				C265342629C636650041A129 /* Preview Content */,
+			);
+			path = GuessMaster2023;
+			sourceTree = "<group>";
+		};
+		C265342629C636650041A129 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C265342729C636650041A129 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C265341C29C636640041A129 /* GuessMaster2023 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C265342B29C636650041A129 /* Build configuration list for PBXNativeTarget "GuessMaster2023" */;
+			buildPhases = (
+				C265341929C636640041A129 /* Sources */,
+				C265341A29C636640041A129 /* Frameworks */,
+				C265341B29C636640041A129 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuessMaster2023;
+			productName = GuessMaster2023;
+			productReference = C265341D29C636640041A129 /* GuessMaster2023.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C265341529C636640041A129 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C265341C29C636640041A129 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = C265341829C636640041A129 /* Build configuration list for PBXProject "GuessMaster2023" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C265341429C636640041A129;
+			productRefGroup = C265341E29C636640041A129 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C265341C29C636640041A129 /* GuessMaster2023 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C265341B29C636640041A129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C265342829C636650041A129 /* Preview Assets.xcassets in Resources */,
+				C265342529C636650041A129 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C265341929C636640041A129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C9FA2429CBA86900F97C49 /* RankView.swift in Sources */,
+				C265342F29C6373E0041A129 /* LoginView.swift in Sources */,
+				C2E5368C29D0C05D00BAB4F3 /* LaunchScreen.swift in Sources */,
+				C265343129C637460041A129 /* RegisterView.swift in Sources */,
+				C2E5368829D0BE8900BAB4F3 /* BombaySpices.swift in Sources */,
+				C2C9FA2A29CC30FF00F97C49 /* GridView.swift in Sources */,
+				C265343729C6375C0041A129 /* MainAppView.swift in Sources */,
+				C2E5368629D0BE7500BAB4F3 /* CoinExchange.swift in Sources */,
+				C2E5368A29D0BE8F00BAB4F3 /* DiscountCode.swift in Sources */,
+				C265343529C637540041A129 /* GuessView.swift in Sources */,
+				C265342329C636640041A129 /* ContentView.swift in Sources */,
+				C265343329C6374E0041A129 /* HomeView.swift in Sources */,
+				C2C9FA2829CBAAD100F97C49 /* User.swift in Sources */,
+				C2E5368429D0BE6E00BAB4F3 /* FriendsList.swift in Sources */,
+				C265342129C636640041A129 /* GuessMaster2023App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C265342929C636650041A129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C265342A29C636650041A129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C265342C29C636650041A129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GuessMaster2023/Preview Content\"";
+				DEVELOPMENT_TEAM = DXYGNW6R6Q;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.GuessMaster2023;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C265342D29C636650041A129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GuessMaster2023/Preview Content\"";
+				DEVELOPMENT_TEAM = DXYGNW6R6Q;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.GuessMaster2023;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C265341829C636640041A129 /* Build configuration list for PBXProject "GuessMaster2023" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C265342929C636650041A129 /* Debug */,
+				C265342A29C636650041A129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C265342B29C636650041A129 /* Build configuration list for PBXNativeTarget "GuessMaster2023" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C265342C29C636650041A129 /* Debug */,
+				C265342D29C636650041A129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C265341529C636640041A129 /* Project object */;
+}
