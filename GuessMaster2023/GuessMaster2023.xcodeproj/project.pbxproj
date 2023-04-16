@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05C8268129E253E1004D7459 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05C8268029E253E1004D7459 /* GoogleService-Info.plist */; };
+		05C8268429E254F9004D7459 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268329E254F9004D7459 /* FirebaseAuth */; };
+		05C8268629E254F9004D7459 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268529E254F9004D7459 /* FirebaseDatabase */; };
+		05C8268829E254F9004D7459 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268729E254F9004D7459 /* FirebaseFirestore */; };
+		05C8268A29E254F9004D7459 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268929E254F9004D7459 /* FirebaseStorage */; };
 		C265342129C636640041A129 /* GuessMaster2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342029C636640041A129 /* GuessMaster2023App.swift */; };
 		C265342329C636640041A129 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342229C636640041A129 /* ContentView.swift */; };
 		C265342529C636650041A129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C265342429C636650041A129 /* Assets.xcassets */; };
@@ -27,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C8268029E253E1004D7459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C265341D29C636640041A129 /* GuessMaster2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessMaster2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C265342029C636640041A129 /* GuessMaster2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessMaster2023App.swift; sourceTree = "<group>"; };
 		C265342229C636640041A129 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +58,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C8268629E254F9004D7459 /* FirebaseDatabase in Frameworks */,
+				05C8268A29E254F9004D7459 /* FirebaseStorage in Frameworks */,
+				05C8268429E254F9004D7459 /* FirebaseAuth in Frameworks */,
+				05C8268829E254F9004D7459 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +103,7 @@
 				C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */,
 				C2E5368929D0BE8F00BAB4F3 /* DiscountCode.swift */,
 				C265342429C636650041A129 /* Assets.xcassets */,
+				05C8268029E253E1004D7459 /* GoogleService-Info.plist */,
 				C265342629C636650041A129 /* Preview Content */,
 			);
 			path = GuessMaster2023;
@@ -122,6 +133,12 @@
 			dependencies = (
 			);
 			name = GuessMaster2023;
+			packageProductDependencies = (
+				05C8268329E254F9004D7459 /* FirebaseAuth */,
+				05C8268529E254F9004D7459 /* FirebaseDatabase */,
+				05C8268729E254F9004D7459 /* FirebaseFirestore */,
+				05C8268929E254F9004D7459 /* FirebaseStorage */,
+			);
 			productName = GuessMaster2023;
 			productReference = C265341D29C636640041A129 /* GuessMaster2023.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +167,9 @@
 				Base,
 			);
 			mainGroup = C265341429C636640041A129;
+			packageReferences = (
+				05C8268229E254F9004D7459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C265341E29C636640041A129 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,6 +186,7 @@
 			files = (
 				C265342829C636650041A129 /* Preview Assets.xcassets in Resources */,
 				C265342529C636650041A129 /* Assets.xcassets in Resources */,
+				05C8268129E253E1004D7459 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessMaster2023/Preview Content\"";
-				DEVELOPMENT_TEAM = DXYGNW6R6Q;
+				DEVELOPMENT_TEAM = DGD23WNNP8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -348,7 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessMaster2023/Preview Content\"";
-				DEVELOPMENT_TEAM = DXYGNW6R6Q;
+				DEVELOPMENT_TEAM = DGD23WNNP8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -391,6 +412,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05C8268229E254F9004D7459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05C8268329E254F9004D7459 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05C8268229E254F9004D7459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		05C8268529E254F9004D7459 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05C8268229E254F9004D7459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		05C8268729E254F9004D7459 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05C8268229E254F9004D7459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		05C8268929E254F9004D7459 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05C8268229E254F9004D7459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C265341529C636640041A129 /* Project object */;
 }

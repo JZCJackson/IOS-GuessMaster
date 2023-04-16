@@ -42,7 +42,7 @@ struct LoginViewContent: View {
                 
                 ZStack(alignment: .leading) {
                     if email.isEmpty {
-                        Text("Email")
+                        Text("Email here")
                             .foregroundColor(.white)
                             .padding(.leading, 10)
                     }

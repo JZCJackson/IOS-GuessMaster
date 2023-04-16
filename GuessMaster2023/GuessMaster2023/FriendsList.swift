@@ -15,6 +15,7 @@ struct FriendsList: View {
                 .foregroundColor(.white)
                 .font(.system(size: 44, weight: .bold))
                 .padding(.top, 50)
+            
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
