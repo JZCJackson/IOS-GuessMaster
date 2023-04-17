@@ -32,6 +32,9 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoggedIn")), perform: { _ in
+            isLoggedIn = true
+        })
     }
 }
 
@@ -40,4 +43,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

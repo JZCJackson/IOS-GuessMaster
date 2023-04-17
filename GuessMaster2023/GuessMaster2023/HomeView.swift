@@ -6,17 +6,39 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct HomeView: View {
-    @State private var charName: String = ""
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var phone: String = ""
-    @State private var points: Int = 0
+    @StateObject private var userData = UserData()
+    @State private var isLoggedOut: Bool = false
+
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-//    private let db = Firestore.firestore()
+    private let db = Firestore.firestore()
+    
+//    private func loadUserData() {
+//        guard let user = Auth.auth().currentUser, let userEmail = user.email else { return }
+//
+//        db.collection("Users").whereField("email", isEqualTo: userEmail)
+//            .getDocuments { querySnapshot, error in
+//                if let err = error {
+//                    print("There is an error --- \(err)")
+//                } else {
+//                    if let users = querySnapshot?.documents {
+//                        for user in users {
+//                            charName = user["charName"] as? String ?? ""
+//                            name = user["name"] as? String ?? ""
+//                            email = user["email"] as? String ?? ""
+//                            phone = user["phone"] as? String ?? ""
+//                            points = user["points"] as? Int ?? 0
+//                        }
+//                    }
+//                }
+//            }
+//    }
+
     
     var body: some View {
         //        TabView {
@@ -33,9 +55,10 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Char Name: \(charName)")
+                Text("Char Name: \(userData.charName)")
+
                     .foregroundColor(.white)
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }
 
             ZStack {
@@ -45,9 +68,9 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Name: \(name)")
+                Text("Name: \(userData.name)")
                     .foregroundColor(.white)
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }
            
             ZStack {
@@ -57,9 +80,9 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Email: \(email)")
+                Text("Email: \(userData.email)")
                     .foregroundColor(.white)
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }
             
             ZStack {
@@ -69,7 +92,7 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Phone: \(phone)")
+                Text("Phone: \(userData.phone)")
                     .foregroundColor(.white)
                     .font(.system(size: 30, weight: .bold))
             }
@@ -83,7 +106,7 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.58)
 
                 
-                Text("Points: \(points)")
+                Text("Points: \(userData.points)")
                     .foregroundColor(.white)
                     .font(.system(size: 30, weight: .bold))
                 
@@ -99,14 +122,27 @@ struct HomeView: View {
                     .cornerRadius(28)
             })
             .padding(.top,20)
+            .onTapGesture {
+                do {
+                    try Auth.auth().signOut()
+                    isLoggedOut = true
+                } catch let signOutError as NSError {
+                    print("Error signing out: %@", signOutError)
+                }
+            }
             
         }
         .navigationBarTitle("", displayMode: .inline)
+        .navigationBarItems(leading: EmptyView()) // Add this line to hide the back button
         .navigationBarBackButtonHidden(true)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+                userData.loadUserData()
+            }
     }
+        
     
 }
 

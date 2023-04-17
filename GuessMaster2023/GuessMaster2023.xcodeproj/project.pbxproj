@@ -24,6 +24,7 @@
 		C2C9FA2429CBA86900F97C49 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2329CBA86900F97C49 /* RankView.swift */; };
 		C2C9FA2829CBAAD100F97C49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2729CBAAD100F97C49 /* User.swift */; };
 		C2C9FA2A29CC30FF00F97C49 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2929CC30FF00F97C49 /* GridView.swift */; };
+		C2DB933A29ED2129004F09E1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB933929ED2129004F09E1 /* UserData.swift */; };
 		C2E5368429D0BE6E00BAB4F3 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368329D0BE6E00BAB4F3 /* FriendsList.swift */; };
 		C2E5368629D0BE7500BAB4F3 /* CoinExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368529D0BE7500BAB4F3 /* CoinExchange.swift */; };
 		C2E5368829D0BE8900BAB4F3 /* BombaySpices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */; };
@@ -46,6 +47,7 @@
 		C2C9FA2329CBA86900F97C49 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		C2C9FA2729CBAAD100F97C49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C2C9FA2929CC30FF00F97C49 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		C2DB933929ED2129004F09E1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C2E5368329D0BE6E00BAB4F3 /* FriendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		C2E5368529D0BE7500BAB4F3 /* CoinExchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinExchange.swift; sourceTree = "<group>"; };
 		C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BombaySpices.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				C265342229C636640041A129 /* ContentView.swift */,
 				C265343629C6375C0041A129 /* MainAppView.swift */,
 				C265343229C6374E0041A129 /* HomeView.swift */,
+				C2DB933929ED2129004F09E1 /* UserData.swift */,
 				C265343429C637540041A129 /* GuessView.swift */,
 				C2C9FA2329CBA86900F97C49 /* RankView.swift */,
 				C2C9FA2929CC30FF00F97C49 /* GridView.swift */,
@@ -199,6 +202,7 @@
 			files = (
 				C2C9FA2429CBA86900F97C49 /* RankView.swift in Sources */,
 				C265342F29C6373E0041A129 /* LoginView.swift in Sources */,
+				C2DB933A29ED2129004F09E1 /* UserData.swift in Sources */,
 				C2E5368C29D0C05D00BAB4F3 /* LaunchScreen.swift in Sources */,
 				C265343129C637460041A129 /* RegisterView.swift in Sources */,
 				C2E5368829D0BE8900BAB4F3 /* BombaySpices.swift in Sources */,

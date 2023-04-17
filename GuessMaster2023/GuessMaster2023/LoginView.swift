@@ -6,25 +6,57 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+
 
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isActive: Bool = false
     
+//    var body: some View {
+//        NavigationView {
+//            LoginViewContent(email: $email, password: $password, isActive: $isActive)
+//                .navigationBarHidden(true)
+//        }
+//        .navigationViewStyle(StackNavigationViewStyle())
+//    }
     var body: some View {
-        NavigationView {
             LoginViewContent(email: $email, password: $password, isActive: $isActive)
                 .navigationBarHidden(true)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
 }
 
 struct LoginViewContent: View {
     @Binding var email: String
     @Binding var password: String
     @Binding var isActive: Bool
+    
+//    func loginUser() {
+//        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+//            if let e = error {
+//                print(e.localizedDescription)
+//            } else {
+//                DispatchQueue.main.async {
+//                    isActive = true
+//                }
+//            }
+//        }
+    
+    
+    func loginUser() {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    DispatchQueue.main.async {
+                        isActive = true
+                        NotificationCenter.default.post(Notification(name: Notification.Name("LoggedIn")))
+                    }
+                }
+            }
+        }
+    
     
     var body: some View {
         ZStack {
@@ -81,8 +113,7 @@ struct LoginViewContent: View {
                 
                 // Add the login button
                 Button(action: {
-                    // Set isActive to true when the button is tapped
-                    isActive = true
+                    loginUser()
                 }) {
                     Text("Login")
                         .padding()

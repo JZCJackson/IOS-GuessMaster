@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct RegisterView: View {
     @State private var username: String = ""
@@ -16,7 +18,35 @@ struct RegisterView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-//    private let db = Firestore.firestore()
+    private let db = Firestore.firestore()
+    
+    func registerUser() {
+            if password.count > 6 && password == confirmPassword {
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        self.presentationMode.wrappedValue.dismiss()
+                        
+                        self.db.collection("Users").addDocument(data: [
+                            "charName": "Great Adventurer",
+                            "name": self.username,
+                            "email": self.email,
+                            "phone": self.phone,
+                            "points": 0
+                        ]) { (error) in
+                            if let e = error {
+                                print("Error \(e)")
+                            } else {
+                                print("Data saved successfully.")
+                            }
+                        }
+                    }
+                }
+            } else {
+                print("Password Error: Either your passwords are not matching or the length of your password is less than 6 characters.")
+            }
+        }
     
     var body: some View {
         ZStack {
@@ -127,9 +157,9 @@ struct RegisterView: View {
                 
                 ZStack(alignment: .leading) {
                     Button(action: {
-                        //connect db
-                    }) {
-                        Text("Register")
+                                registerUser()
+                            }) {
+                                Text("Register")
                     }
                     .foregroundColor(.white)
                     .padding()
