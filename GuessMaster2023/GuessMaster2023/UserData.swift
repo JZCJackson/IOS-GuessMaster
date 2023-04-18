@@ -40,7 +40,26 @@ class UserData: ObservableObject {
             }
         }
     }
+    
+    func updatePoints(newPoints: Int) {
+        guard let userUID = Auth.auth().currentUser?.uid else { return }
+        db.collection("Users").whereField("uid", isEqualTo: userUID).getDocuments { querySnapshot, error in
+            if let err = error {
+                print("There is an error --- \(err)")
+            } else {
+                if let users = querySnapshot?.documents {
+                    for user in users {
+                        print("------->\(user.documentID)")
+                        self.db.collection("Users").document(user.documentID).setData(["points": newPoints], merge: true)
+                    }
+                }
+            }
+        }
+    }
+
 }
+
+
 
 struct UserModel: Identifiable {
     var id: String

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-//import FirebaseAuth
-//import FirebaseFirestore
-//import FirebaseDatabase
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
 
 struct GuessView: View {
     @State private var showWordLabel = ""
@@ -17,7 +18,8 @@ struct GuessView: View {
     @State private var resultImage: UIImage?
     @State private var hangmanImage: UIImage?
     @State private var guessPlaceholder = "Guess Words"
-    
+    @ObservedObject private var userData = UserData()
+
     
     //    let db = Firestore.firestore()
     //    var ref = Database.database().reference()
@@ -168,9 +170,13 @@ struct GuessView: View {
         hangmanImage = UIImage(named: "pic\(wrongGuessArray.count)")
     }
     
+
     func increasePoints() {
-        // Update the points
-    }
+            if let currentUser = userData.user.first {
+                let newPoints = currentUser.points + 5
+                userData.updatePoints(newPoints: newPoints)
+            }
+        }
     
     func createMaskedWord() {
         showWordLabel = String(repeating: "?", count: word.count)
