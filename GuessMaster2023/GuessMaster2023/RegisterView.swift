@@ -2,7 +2,7 @@
 //  RegisterView.swift
 //  Ios1Project
 //
-//  Created by Orange on 2023-03-17.
+//  Created by Junzhi Chen on 2023-03-17.
 //
 
 import SwiftUI

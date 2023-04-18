@@ -2,7 +2,7 @@
 //  GuessView.swift
 //  Ios1Project
 //
-//  Created by Orange on 2023-03-18.
+//  Created by Junzhi Chen on 2023-03-18.
 //
 
 import SwiftUI

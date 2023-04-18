@@ -2,7 +2,7 @@
 //  LaunchScreen.swift
 //  GuessMaster2023
 //
-//  Created by Orange on 2023-03-26.
+//  Created by Junzhi Chen on 2023-03-26.
 //
 
 import SwiftUI

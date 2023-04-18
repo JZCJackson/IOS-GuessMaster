@@ -2,7 +2,7 @@
 //  User.swift
 //  GuessMaster2023
 //
-//  Created by Orange on 2023-03-22.
+//  Created by Junzhi Chen on 2023-03-22.
 //
 
 import Foundation
