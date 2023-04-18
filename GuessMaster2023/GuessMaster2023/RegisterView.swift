@@ -20,33 +20,38 @@ struct RegisterView: View {
     
     private let db = Firestore.firestore()
     
+
     func registerUser() {
-            if password.count > 6 && password == confirmPassword {
-                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                    if let e = error {
-                        print(e.localizedDescription)
-                    } else {
+        if password.count > 6 && password == confirmPassword {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    if let userUID = authResult?.user.uid {
                         self.presentationMode.wrappedValue.dismiss()
                         
                         self.db.collection("Users").addDocument(data: [
+                           
+                            "uid": userUID,
                             "charName": "Great Adventurer",
                             "name": self.username,
                             "email": self.email,
                             "phone": self.phone,
                             "points": 0
-                        ]) { (error) in
+                            ]) { (error) in
                             if let e = error {
-                                print("Error \(e)")
+                            print("Error (e)")
                             } else {
-                                print("Data saved successfully.")
+                            print("Data saved successfully.")
                             }
-                        }
-                    }
-                }
-            } else {
-                print("Password Error: Either your passwords are not matching or the length of your password is less than 6 characters.")
-            }
-        }
+                            }
+                            }
+                            }
+                            }
+                            } else {
+                            print("Password Error: Either your passwords are not matching or the length of your password is less than 6 characters.")
+                            }
+                            }
     
     var body: some View {
         ZStack {

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3A686FE9-31DE-4898-A3C7-C48DC2795B8B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F776FCCC-F33C-4A68-A790-83560A2B82E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuessMaster2023/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "HomeView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "F776FCCC-F33C-4A68-A790-83560A2B82E1 - 8771bed459965223"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuessMaster2023.HomeView.init() -&gt; GuessMaster2023.HomeView"
+                  moduleName = "GuessMaster2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/orange/Desktop/2023Spring/Ios2/project/IOS-GuessMaster/GuessMaster2023/GuessMaster2023/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "388">
+               </Location>
+               <Location
+                  uuid = "F776FCCC-F33C-4A68-A790-83560A2B82E1 - de0567c186b33116"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuessMaster2023.HomeView.init(presentationMode: SwiftUI.Environment&lt;SwiftUI.Binding&lt;SwiftUI.PresentationMode&gt;&gt;) -&gt; GuessMaster2023.HomeView"
+                  moduleName = "GuessMaster2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/orange/Desktop/2023Spring/Ios2/project/IOS-GuessMaster/GuessMaster2023/GuessMaster2023/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C92B9663-946D-4657-B993-5D960FF83696"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuessMaster2023/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "HomeView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "C92B9663-946D-4657-B993-5D960FF83696 - 8771bed459965223"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuessMaster2023.HomeView.init() -&gt; GuessMaster2023.HomeView"
+                  moduleName = "GuessMaster2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/orange/Desktop/2023Spring/Ios2/project/IOS-GuessMaster/GuessMaster2023/GuessMaster2023/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "388">
+               </Location>
+               <Location
+                  uuid = "C92B9663-946D-4657-B993-5D960FF83696 - de0567c186b33116"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuessMaster2023.HomeView.init(presentationMode: SwiftUI.Environment&lt;SwiftUI.Binding&lt;SwiftUI.PresentationMode&gt;&gt;) -&gt; GuessMaster2023.HomeView"
+                  moduleName = "GuessMaster2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/orange/Desktop/2023Spring/Ios2/project/IOS-GuessMaster/GuessMaster2023/GuessMaster2023/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

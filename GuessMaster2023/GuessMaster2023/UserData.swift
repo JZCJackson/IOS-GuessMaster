@@ -6,43 +6,48 @@
 //
 
 import SwiftUI
+import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 
 class UserData: ObservableObject {
-    @Published var charName: String = ""
-    @Published var name: String = ""
-    @Published var email: String = ""
-    @Published var phone: String = ""
-    @Published var points: Int = 0
+    @Published var user = [UserModel]()
+    private var db = Firestore.firestore()
     
-    private let db = Firestore.firestore()
+    init() {
+        fetchData()
+    }
     
-    func loadUserData() {
-        // getting logged in user data
-        let user = Auth.auth().currentUser
-        var email: String?
-        if let currentUser = user {
-            email = currentUser.value(forKey: "email") as? String
-        }
-
-        let documents = db.collection("Users").whereField("email", isEqualTo: email!)
-        documents.addSnapshotListener { querySnapshot, error in
-            if let err = error {
-                print("There is an error --- \(err)")
-            } else {
-                if let users = querySnapshot?.documents {
-                    for user in users {
-                        self.charName = user["charName"] as? String ?? ""
-                        self.name = user["name"] as? String ?? ""
-                        self.email = user["email"] as? String ?? ""
-                        self.phone = user["phone"] as? String ?? ""
-                        self.points = user["points"] as? Int ?? 0
-                    }
-                }
+    func fetchData() {
+        guard let userUID = Auth.auth().currentUser?.uid else { return }
+        db.collection("Users").whereField("uid", isEqualTo: userUID).addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            self.user = documents.map { (queryDocumentSnapshot) -> UserModel in
+                let data = queryDocumentSnapshot.data()
+                
+                let uid = data["uid"] as? String ?? ""
+                let charName = data["charName"] as? String ?? ""
+                let name = data["name"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let phone = data["phone"] as? String ?? ""
+                let points = data["points"] as? Int ?? 0
+                
+                return UserModel(id: queryDocumentSnapshot.documentID, uid: uid, charName: charName, name: name, email: email, phone: phone, points: points)
             }
         }
     }
-
 }
 
+struct UserModel: Identifiable {
+    var id: String
+    var uid: String
+    var charName: String
+    var name: String
+    var email: String
+    var phone: String
+    var points: Int
+}

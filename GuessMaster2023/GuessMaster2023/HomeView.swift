@@ -10,40 +10,23 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct HomeView: View {
-    @StateObject private var userData = UserData()
     @State private var isLoggedOut: Bool = false
+    @StateObject private var userData = UserData()
 
+
+    
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     private let db = Firestore.firestore()
     
-//    private func loadUserData() {
-//        guard let user = Auth.auth().currentUser, let userEmail = user.email else { return }
-//
-//        db.collection("Users").whereField("email", isEqualTo: userEmail)
-//            .getDocuments { querySnapshot, error in
-//                if let err = error {
-//                    print("There is an error --- \(err)")
-//                } else {
-//                    if let users = querySnapshot?.documents {
-//                        for user in users {
-//                            charName = user["charName"] as? String ?? ""
-//                            name = user["name"] as? String ?? ""
-//                            email = user["email"] as? String ?? ""
-//                            phone = user["phone"] as? String ?? ""
-//                            points = user["points"] as? Int ?? 0
-//                        }
-//                    }
-//                }
-//            }
-//    }
 
     
     var body: some View {
         //        TabView {
         VStack {
 //            Spacer()
+            if let user = userData.user.first {
             Text("Home")
                 .foregroundColor(.white)
                 .font(.system(size: 44, weight: .bold))
@@ -55,10 +38,12 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Char Name: \(userData.charName)")
+//                Text("Char Name: \(charName)")
+                Text(" \(user.charName)")
+
 
                     .foregroundColor(.white)
-                    .font(.system(size: 20, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
             }
 
             ZStack {
@@ -68,9 +53,10 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Name: \(userData.name)")
+                Text("\(user.name)")
+
                     .foregroundColor(.white)
-                    .font(.system(size: 20, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
             }
            
             ZStack {
@@ -80,9 +66,9 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Email: \(userData.email)")
+                Text("\(user.email)")
                     .foregroundColor(.white)
-                    .font(.system(size: 20, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
             }
             
             ZStack {
@@ -92,9 +78,9 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.1) // Adjust the width and height as needed
                     .clipped()
                 
-                Text("Phone: \(userData.phone)")
+                Text("\(user.phone)")
                     .foregroundColor(.white)
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
             }
           
             ZStack {
@@ -106,12 +92,14 @@ struct HomeView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.58)
 
                 
-                Text("Points: \(userData.points)")
+                Text("Points: \(user.points)")
                     .foregroundColor(.white)
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                 
             }
-            
+            } else {
+                           Text("Loading user data...")
+                       }
             NavigationLink(destination: LoginView(), label: {
                 Text("Logout")
                     .padding()
@@ -138,9 +126,7 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
-        .onAppear {
-                userData.loadUserData()
-            }
+        
     }
         
     

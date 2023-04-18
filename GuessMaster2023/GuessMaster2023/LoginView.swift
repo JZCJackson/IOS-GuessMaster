@@ -13,14 +13,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isActive: Bool = false
-    
-//    var body: some View {
-//        NavigationView {
-//            LoginViewContent(email: $email, password: $password, isActive: $isActive)
-//                .navigationBarHidden(true)
-//        }
-//        .navigationViewStyle(StackNavigationViewStyle())
-//    }
+
     var body: some View {
             LoginViewContent(email: $email, password: $password, isActive: $isActive)
                 .navigationBarHidden(true)
@@ -31,17 +24,6 @@ struct LoginViewContent: View {
     @Binding var email: String
     @Binding var password: String
     @Binding var isActive: Bool
-    
-//    func loginUser() {
-//        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//            if let e = error {
-//                print(e.localizedDescription)
-//            } else {
-//                DispatchQueue.main.async {
-//                    isActive = true
-//                }
-//            }
-//        }
     
     
     func loginUser() {
