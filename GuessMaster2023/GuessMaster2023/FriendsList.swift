@@ -26,7 +26,7 @@ struct FriendsList: View {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 Grid {
-                    ForEach(users) { user in
+                    ForEach(users, id: \.uid) { user in
                         Text("\(user.name)")
                             .listRowBackground(Color.black)
                             .foregroundColor(Color.white)
