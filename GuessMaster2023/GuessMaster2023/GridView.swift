@@ -25,7 +25,7 @@ struct GridView<Content: View>: View {
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
         GridView(items: [
-            User(charName: "Character1", name: "John Doe", email: "john.doe@example.com", phone: "123-456-7890", points: 100),
+            User(id: "1", uid: "123", charName: "Character1", name: "John Doe", email: "john.doe@example.com", phone: "123-456-7890", points: 100),
 //            User(charName: "Character2", name: "Jane Doe", email: "jane.doe@example.com", phone: "123-456-7891", points: 200),
 //            User(charName: "Character3", name: "John Smith", email: "john.smith@example.com", phone: "123-456-7892", points: 300)
         ]) { user in

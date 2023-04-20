@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct RankView: View {
+    
     @State private var users: [User] = []
-
+    @StateObject private var userData = UserData()
+    
+    private var db = Firestore.firestore()
+    
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -19,10 +24,10 @@ struct RankView: View {
                     .font(.system(size: 44, weight: .bold))
                     .foregroundColor(.white)
                     .padding(.top,50)
-
+                
                 GridView(items: users) { user in
                     VStack {
-                        Text(user.charName)
+                        Text(user.name)
                             .foregroundColor(.white)
                             .font(.system(size: 25, weight: .bold))
                             .padding()
@@ -48,19 +53,32 @@ struct RankView: View {
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
     }
-
+    
     private func loadUsers() {
-        // Add sample data for testing or fetch data from a database
-        let user1 = User(charName: "Character1", name: "John Doe", email: "john.doe@example.com", phone: "123-456-7890", points: 100)
-        let user2 = User(charName: "Character2", name: "Jane Doe", email: "jane.doe@example.com", phone: "123-456-7891", points: 200)
-        let user3 = User(charName: "Character3", name: "John Smith", email: "john.smith@example.com", phone: "123-456-7892", points: 300)
-
-        self.users = [user1, user2, user3]
+        // Add sample data for testing or fetch data from a databas
+        
+        db.collection("Users").order(by: "points", descending: true).addSnapshotListener { querySnapshot, error in
+            self.users = []
+            if error == nil {
+                if let documents = querySnapshot?.documents {
+                    for document in documents {
+                        let user = User(id: (document["id"] as? String) ?? "",
+                                        uid: (document["uid"] as? String)!,
+                                        charName: (document["charName"] as? String)!,
+                                        name: (document["name"] as? String)!,
+                                        email: (document["email"] as? String)!,
+                                        phone: (document["phone"] as? String)! ,
+                                        points: (document["points"] as? Int)!)
+                        self.users.append(user)
+                    }
+                }
+            }
+        }
     }
-    }
+}
 
-    struct RankView_Previews: PreviewProvider {
+struct RankView_Previews: PreviewProvider {
     static var previews: some View {
-    RankView()
+        RankView()
     }
-    }
+}

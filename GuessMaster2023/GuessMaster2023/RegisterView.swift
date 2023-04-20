@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct RegisterView: View {
+    
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var phone: String = ""

@@ -12,15 +12,10 @@ import FirebaseFirestore
 struct HomeView: View {
     @State private var isLoggedOut: Bool = false
     @StateObject private var userData = UserData()
-
-
-    
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     private let db = Firestore.firestore()
-    
-
     
     var body: some View {
         //        TabView {

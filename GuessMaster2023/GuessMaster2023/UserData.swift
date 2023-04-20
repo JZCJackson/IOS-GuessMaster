@@ -56,6 +56,27 @@ class UserData: ObservableObject {
             }
         }
     }
+    
+    func loadUsers() -> [UserModel] {
+        db.collection("Users").getDocuments { querySnapshot, error in
+            self.user = []
+            if error == nil {
+                if let documents = querySnapshot?.documents {
+                    for document in documents {
+                        let user = UserModel(id: (document["id"] as? String)!,
+                                             uid: (document["uid"] as? String)!,
+                                        charName: (document["charName"] as? String)!,
+                                        name: (document["name"] as? String)!,
+                                        email: (document["email"] as? String)!,
+                                        phone: (document["phone"] as? String)! ,
+                                        points: (document["points"] as? Int)!)
+                        self.user.append(user)
+                    }
+                }
+            }
+        }
+        return user
+    }
 
 }
 

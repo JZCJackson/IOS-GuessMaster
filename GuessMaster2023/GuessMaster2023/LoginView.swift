@@ -10,8 +10,8 @@ import FirebaseAuth
 
 
 struct LoginView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State private var email: String = "fenil@gmail.com"
+    @State private var password: String = "1234567"
     @State private var isActive: Bool = false
 
     var body: some View {

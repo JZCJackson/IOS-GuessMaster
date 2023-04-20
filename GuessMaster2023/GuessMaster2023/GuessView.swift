@@ -19,7 +19,7 @@ struct GuessView: View {
     @State private var hangmanImage: UIImage?
     @State private var guessPlaceholder = "Guess Words"
     @ObservedObject private var userData = UserData()
-
+    
     
     //    let db = Firestore.firestore()
     //    var ref = Database.database().reference()
@@ -59,7 +59,7 @@ struct GuessView: View {
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .padding()
-                    
+                
                 
                 Text(wrongGuess)
                     .padding()
@@ -82,8 +82,8 @@ struct GuessView: View {
                 }
                 .padding(.top)
                 .frame(width: UIScreen.main.bounds.width * 0.5)
-
-
+                
+                
                 
                 HStack {
                     Button(action: guessAction) {
@@ -114,37 +114,37 @@ struct GuessView: View {
     
     func guessAction() {
         let guess1 = guessLetter
-            if guess1 == "" {
-                guessPlaceholder = "Can not be empty"
-            } else if guess1.count > 1 {
-                guessPlaceholder = "Please enter one letter"
-                guessLetter = ""
-            } else {
+        if guess1 == "" {
+            guessPlaceholder = "Can not be empty"
+        } else if guess1.count > 1 {
+            guessPlaceholder = "Please enter one letter"
+            guessLetter = ""
+        } else {
             guess = Character(guessLetter.uppercased())
             
-                if usedLetters.contains(guess) {
-                    for i in 0...word.count - 1 {
-                        if guess == usedLetters[i] {
-                            showDatabase[i] = guess
-                        }
+            if usedLetters.contains(guess) {
+                for i in 0...word.count - 1 {
+                    if guess == usedLetters[i] {
+                        showDatabase[i] = guess
                     }
-                } else {
-                    wrongGuessArray.append(guess)
-                    wrongGuess = String(wrongGuessArray)
                 }
-                showWordLabel = String(showDatabase)
-                guessLetter = ""
-                
-                if wrongGuessArray.count == 10 {
-                    resultImage = UIImage(named: "gameOver")
-                } else if !showWordLabel.contains("?") {
-                    resultImage = UIImage(named: "youWin")
-                    increasePoints()
-                } else {
-                    showImage()
-                }
-                
+            } else {
+                wrongGuessArray.append(guess)
+                wrongGuess = String(wrongGuessArray)
             }
+            showWordLabel = String(showDatabase)
+            guessLetter = ""
+            
+            if wrongGuessArray.count == 10 {
+                resultImage = UIImage(named: "gameOver")
+            } else if !showWordLabel.contains("?") {
+                resultImage = UIImage(named: "youWin")
+                increasePoints()
+            } else {
+                showImage()
+            }
+            
+        }
     }
     
     
@@ -155,28 +155,28 @@ struct GuessView: View {
         wrongGuessArray = []
         wrongGuess = ""
         showWordLabel = ""
-
+        
         word = database.randomElement()!
         usedLetters = Array(word)
-
+        
         for _ in 1...word.count {
             showWordLabel += "?"
             showDatabase = Array(showWordLabel)
         }
     }
-        
+    
     func showImage() {
         // MARK: show the different images when the user guess wrong
         hangmanImage = UIImage(named: "pic\(wrongGuessArray.count)")
     }
     
-
+    
     func increasePoints() {
-            if let currentUser = userData.user.first {
-                let newPoints = currentUser.points + 5
-                userData.updatePoints(newPoints: newPoints)
-            }
+        if let currentUser = userData.user.first {
+            let newPoints = currentUser.points + 5
+            userData.updatePoints(newPoints: newPoints)
         }
+    }
     
     func createMaskedWord() {
         showWordLabel = String(repeating: "?", count: word.count)

@@ -10,6 +10,7 @@ import SwiftUI
 struct CoinExchange: View {
     
     @State var isActive: Bool
+    @StateObject private var userData = UserData()
     
     var body: some View {
         VStack {
@@ -23,11 +24,12 @@ struct CoinExchange: View {
                     .foregroundColor(.white)
                     .padding(.top,50)
 
-                Text("999")
-                    .font(.system(size: 44, weight: .black))
-                    .foregroundColor(Color.green)
-                    .padding(.top,50)
-
+                if let user = userData.user.first {
+                    Text("\(user.points)")
+                        .font(.system(size: 44, weight: .black))
+                        .foregroundColor(Color.green)
+                        .padding(.top,50)
+                }
             }.padding()
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
