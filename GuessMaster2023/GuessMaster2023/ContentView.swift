@@ -9,6 +9,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var isLoggedIn: Bool = false
     @State private var showLaunchScreen: Bool = true
+    @State private var showPrivacyPolicy: Bool = true
+
 
     var body: some View {
         NavigationView {
@@ -21,6 +23,10 @@ struct ContentView: View {
                             }
                         }
                     }
+            } else if showPrivacyPolicy {
+                       PrivacyPolicy(agreeAction: {
+                           showPrivacyPolicy = false
+                       })
             } else {
                 if isLoggedIn {
                     MainAppView()

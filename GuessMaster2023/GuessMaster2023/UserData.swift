@@ -77,6 +77,28 @@ class UserData: ObservableObject {
         }
         return user
     }
+    
+    // Add this function to delete the user's data from the "Users" collection
+        func deleteUserData() {
+            guard let userUID = Auth.auth().currentUser?.uid else { return }
+            db.collection("Users").whereField("uid", isEqualTo: userUID).getDocuments { querySnapshot, error in
+                if let err = error {
+                    print("There is an error --- \(err)")
+                } else {
+                    if let users = querySnapshot?.documents {
+                        for user in users {
+                            self.db.collection("Users").document(user.documentID).delete { error in
+                                if let error = error {
+                                    print("Error deleting user document: \(error)")
+                                } else {
+                                    print("User document successfully deleted")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
 }
 

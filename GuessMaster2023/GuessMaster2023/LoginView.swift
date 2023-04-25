@@ -10,36 +10,39 @@ import FirebaseAuth
 
 
 struct LoginView: View {
-    @State private var email: String = "fenil@gmail.com"
-    @State private var password: String = "1234567"
+    @State private var email: String = ""
+    @State private var password: String = ""
     @State private var isActive: Bool = false
+    @State private var showRankListAlert: Bool = false
+
 
     var body: some View {
             LoginViewContent(email: $email, password: $password, isActive: $isActive)
                 .navigationBarHidden(true)
-        }
+    }
 }
 
 struct LoginViewContent: View {
     @Binding var email: String
     @Binding var password: String
     @Binding var isActive: Bool
+    @State private var showAlert: Bool = false
+    @State private var hasAgreedToPrivacyPolicy: Bool = false
     
     
     func loginUser() {
-            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    print(e.localizedDescription)
-                } else {
-                    DispatchQueue.main.async {
-                        isActive = true
-                        NotificationCenter.default.post(Notification(name: Notification.Name("LoggedIn")))
-                    }
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                DispatchQueue.main.async {
+                    isActive = true
+                    NotificationCenter.default.post(Notification(name: Notification.Name("LoggedIn")))
                 }
             }
         }
-    
-    
+    }
+
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -56,7 +59,7 @@ struct LoginViewContent: View {
                 
                 ZStack(alignment: .leading) {
                     if email.isEmpty {
-                        Text("Email here")
+                        Text("Email")
                             .foregroundColor(.white)
                             .padding(.leading, 10)
                     }
@@ -95,17 +98,20 @@ struct LoginViewContent: View {
                 
                 // Add the login button
                 Button(action: {
-                    loginUser()
-                }) {
-                    Text("Login")
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width * 0.5)
-                        .foregroundColor(.black)
-                        .frame(height: UIScreen.main.bounds.height * 0.05)
-                        .background(Color(red: 187.0/255.0, green: 134/255.0, blue: 252/255.0))
-                        .cornerRadius(40)
-                }
-                .padding()
+                                loginUser()
+                            }) {
+                                Text("Login")
+                                    .padding()
+                                    .frame(width: UIScreen.main.bounds.width * 0.5)
+                                    .foregroundColor(.black)
+                                    .frame(height: UIScreen.main.bounds.height * 0.05)
+                                    .background(Color(red: 187.0/255.0, green: 134/255.0, blue: 252/255.0))
+                                    .cornerRadius(40)
+                            }
+                            .padding()
+//                            .alert(isPresented: $showAlert) {
+//                                privacyPolicyAlert
+//                            }
                 
                 // Add the NavigationLink to HomeView
                 NavigationLink(destination: MainAppView(), isActive: $isActive) {
@@ -128,6 +134,8 @@ struct LoginViewContent: View {
         }
     }
 }
+
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

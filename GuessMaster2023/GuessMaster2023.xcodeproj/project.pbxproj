@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05C8268129E253E1004D7459 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05C8268029E253E1004D7459 /* GoogleService-Info.plist */; };
 		05C8268429E254F9004D7459 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268329E254F9004D7459 /* FirebaseAuth */; };
 		05C8268629E254F9004D7459 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268529E254F9004D7459 /* FirebaseDatabase */; };
 		05C8268829E254F9004D7459 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268729E254F9004D7459 /* FirebaseFirestore */; };
 		05C8268A29E254F9004D7459 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 05C8268929E254F9004D7459 /* FirebaseStorage */; };
+		C255BE2C29F1BCCE007016F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C255BE2B29F1BCCE007016F2 /* GoogleService-Info.plist */; };
 		C265342129C636640041A129 /* GuessMaster2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342029C636640041A129 /* GuessMaster2023App.swift */; };
 		C265342329C636640041A129 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265342229C636640041A129 /* ContentView.swift */; };
 		C265342529C636650041A129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C265342429C636650041A129 /* Assets.xcassets */; };
@@ -21,6 +21,8 @@
 		C265343329C6374E0041A129 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343229C6374E0041A129 /* HomeView.swift */; };
 		C265343529C637540041A129 /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343429C637540041A129 /* GuessView.swift */; };
 		C265343729C6375C0041A129 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265343629C6375C0041A129 /* MainAppView.swift */; };
+		C299938829F4C7B300450DD6 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299938729F4C7B300450DD6 /* PrivacyPolicy.swift */; };
+		C299938A29F4D52600450DD6 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299938929F4D52600450DD6 /* DeleteAccountView.swift */; };
 		C2C9FA2429CBA86900F97C49 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2329CBA86900F97C49 /* RankView.swift */; };
 		C2C9FA2829CBAAD100F97C49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2729CBAAD100F97C49 /* User.swift */; };
 		C2C9FA2A29CC30FF00F97C49 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9FA2929CC30FF00F97C49 /* GridView.swift */; };
@@ -33,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05C8268029E253E1004D7459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C255BE2B29F1BCCE007016F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C265341D29C636640041A129 /* GuessMaster2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessMaster2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C265342029C636640041A129 /* GuessMaster2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessMaster2023App.swift; sourceTree = "<group>"; };
 		C265342229C636640041A129 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		C265343229C6374E0041A129 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C265343429C637540041A129 /* GuessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
 		C265343629C6375C0041A129 /* MainAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		C299938729F4C7B300450DD6 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		C299938929F4D52600450DD6 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		C2C9FA2329CBA86900F97C49 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		C2C9FA2729CBAAD100F97C49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C2C9FA2929CC30FF00F97C49 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -91,12 +95,14 @@
 			children = (
 				C265342029C636640041A129 /* GuessMaster2023App.swift */,
 				C2E5368B29D0C05D00BAB4F3 /* LaunchScreen.swift */,
+				C299938729F4C7B300450DD6 /* PrivacyPolicy.swift */,
 				C265342E29C6373E0041A129 /* LoginView.swift */,
 				C265343029C637460041A129 /* RegisterView.swift */,
 				C265342229C636640041A129 /* ContentView.swift */,
 				C265343629C6375C0041A129 /* MainAppView.swift */,
-				C265343229C6374E0041A129 /* HomeView.swift */,
 				C2DB933929ED2129004F09E1 /* UserData.swift */,
+				C265343229C6374E0041A129 /* HomeView.swift */,
+				C299938929F4D52600450DD6 /* DeleteAccountView.swift */,
 				C265343429C637540041A129 /* GuessView.swift */,
 				C2C9FA2329CBA86900F97C49 /* RankView.swift */,
 				C2C9FA2929CC30FF00F97C49 /* GridView.swift */,
@@ -105,8 +111,8 @@
 				C2E5368529D0BE7500BAB4F3 /* CoinExchange.swift */,
 				C2E5368729D0BE8900BAB4F3 /* BombaySpices.swift */,
 				C2E5368929D0BE8F00BAB4F3 /* DiscountCode.swift */,
+				C255BE2B29F1BCCE007016F2 /* GoogleService-Info.plist */,
 				C265342429C636650041A129 /* Assets.xcassets */,
-				05C8268029E253E1004D7459 /* GoogleService-Info.plist */,
 				C265342629C636650041A129 /* Preview Content */,
 			);
 			path = GuessMaster2023;
@@ -189,7 +195,7 @@
 			files = (
 				C265342829C636650041A129 /* Preview Assets.xcassets in Resources */,
 				C265342529C636650041A129 /* Assets.xcassets in Resources */,
-				05C8268129E253E1004D7459 /* GoogleService-Info.plist in Resources */,
+				C255BE2C29F1BCCE007016F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,11 +211,13 @@
 				C2DB933A29ED2129004F09E1 /* UserData.swift in Sources */,
 				C2E5368C29D0C05D00BAB4F3 /* LaunchScreen.swift in Sources */,
 				C265343129C637460041A129 /* RegisterView.swift in Sources */,
+				C299938829F4C7B300450DD6 /* PrivacyPolicy.swift in Sources */,
 				C2E5368829D0BE8900BAB4F3 /* BombaySpices.swift in Sources */,
 				C2C9FA2A29CC30FF00F97C49 /* GridView.swift in Sources */,
 				C265343729C6375C0041A129 /* MainAppView.swift in Sources */,
 				C2E5368629D0BE7500BAB4F3 /* CoinExchange.swift in Sources */,
 				C2E5368A29D0BE8F00BAB4F3 /* DiscountCode.swift in Sources */,
+				C299938A29F4D52600450DD6 /* DeleteAccountView.swift in Sources */,
 				C265343529C637540041A129 /* GuessView.swift in Sources */,
 				C265342329C636640041A129 /* ContentView.swift in Sources */,
 				C265343329C6374E0041A129 /* HomeView.swift in Sources */,
@@ -342,22 +350,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessMaster2023/Preview Content\"";
-				DEVELOPMENT_TEAM = DGD23WNNP8;
+				DEVELOPMENT_TEAM = VDQS4882Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = GuessMaster2023;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Chen.GuessMaster2023;
+				PRODUCT_BUNDLE_IDENTIFIER = IOS2.Chen.Fenil.GuessMaster2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -371,22 +380,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessMaster2023/Preview Content\"";
-				DEVELOPMENT_TEAM = DGD23WNNP8;
+				DEVELOPMENT_TEAM = VDQS4882Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = GuessMaster2023;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Chen.GuessMaster2023;
+				PRODUCT_BUNDLE_IDENTIFIER = IOS2.Chen.Fenil.GuessMaster2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
